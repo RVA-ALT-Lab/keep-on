@@ -105,12 +105,12 @@ li {
   flex-flow: row wrap;
   width: 100%;
   justify-content: space-between;
-  margin-top: 22px;
+  margin: 32px 0 20px 0;
   transition: .3s;
 }
 
-.return-block a:hover .up {
-  padding-bottom: 6px;
+.return-block a:hover {
+  background-color: #efefef;
 }
 
 #footer {
