@@ -1,7 +1,7 @@
 //From https://css-tricks.com/snippets/jquery/smooth-scrolling/
 
 // Select all links with hashes
-$('a[href*="#"]')
+jQuery('a[href*="#"]')
   // Remove links that don't actually link to anything
   .not('[href="#"]')
   .not('[href="#0"]')
@@ -13,26 +13,45 @@ $('a[href*="#"]')
       location.hostname == this.hostname
     ) {
       // Figure out element to scroll to
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      var target = jQuery(this.hash);
+      target = target.length ? target : jQuery('[name=' + this.hash.slice(1) + ']');
       // Does a scroll target exist?
       if (target.length) {
         // Only prevent default if animation is actually gonna happen
         event.preventDefault();
-        $('html, body').animate({
+        jQuery('html, body').animate({
           scrollTop: target.offset().top
         }, 1000, function() {
           // Callback after animation
           // Must change focus!
-          var $target = $(target);
-          $target.focus();
-          if ($target.is(":focus")) { // Checking if the target was focused
+          var jQuerytarget = jQuery(target);
+          jQuerytarget.focus();
+          if (jQuerytarget.is(":focus")) { // Checking if the target was focused
             return false;
           } else {
-            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
-            $target.focus(); // Set focus again
+            jQuerytarget.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+            jQuerytarget.focus(); // Set focus again
           };
         });
       }
     }
   });
+
+
+  //from http://stackoverflow.com/questions/29987154/expand-specific-accordion-from-url
+ jQuery(document).ready(function() {
+        if(window.location.hash != null && window.location.hash != ""){
+          console.log(location.hash);
+        jQuery('.collapse').removeClass('in');
+        jQuery(window.location.hash + '.collapse').collapse('show');
+      }
+   });
+
+ function toggleIcon(e) {
+    jQuery(e.target)
+        .prev('.panel-heading')
+        .find(".more-less")
+        .toggleClass('glyphicon-plus glyphicon-minus');
+}
+jQuery('.panel-group').on('hidden.bs.collapse', toggleIcon);
+jQuery('.panel-group').on('shown.bs.collapse', toggleIcon);
