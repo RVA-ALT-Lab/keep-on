@@ -157,6 +157,13 @@ li {
 #keep-on .card-header .btn {
   color: #424242;
   font-weight: 700;
+  width: 100%;
+  height: auto;
+  text-align: left;
+}
+
+#stu-support {
+  margin-top: 20px;
 }
 
 
