@@ -166,8 +166,13 @@ li {
   margin-top: 20px;
 }
 
+
+.btn {
+  transition: all .4s;
+}
+
 .btn[aria-expanded="true"]{
-  border-bottom: 3px solid #d43900;
+  border-left: 10px solid #008A00;
   border-radius: 0;
 }
 
