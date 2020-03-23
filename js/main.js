@@ -51,7 +51,7 @@ jQuery('a[href*="#"]')
     jQuery(e.target)
         .prev('.panel-heading')
         .find(".more-less")
-        .toggleClass('glyphicon-plus glyphicon-minus');
+        //.toggleClass('glyphicon-plus glyphicon-minus');
 }
 jQuery('.panel-group').on('hidden.bs.collapse', toggleIcon);
 jQuery('.panel-group').on('shown.bs.collapse', toggleIcon);
