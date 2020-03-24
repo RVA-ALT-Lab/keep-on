@@ -181,6 +181,23 @@ li {
   border-radius: 0;
 }
 
+.btn-help {
+  margin: 20px auto;
+  display: block;
+  max-width: 300px;
+  font-size: 1.2em;
+  font-weight: 600;
+  background-color: #fff;
+  color: #000;
+  border-radius: 0;
+  border: 2px solid #000;
+}
+
+.btn-help:hover {
+  color: #fff;
+  background-color: #d43900;
+}
+
 .card-header button::after {
   content: "+";
   color: #333;
