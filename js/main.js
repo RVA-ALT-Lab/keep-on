@@ -38,9 +38,10 @@ jQuery('a[href*="#"]')
   });
 
 
-// $('#my-link').click(function(e) {
-//     $('#collapseOne').collapse('hide');
-//     $('#collapseTwo').collapse('show');        
+// $(document).ready(function() {
+//     $("#section-two").on('shown.bs.collapse', function() {
+//         window.location = "#section-two";
+//     });
 // });
 
   //from http://stackoverflow.com/questions/29987154/expand-specific-accordion-from-url
